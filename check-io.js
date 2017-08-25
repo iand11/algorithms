@@ -40,3 +40,30 @@ var findMessage = function(data) {
   });
   return array.join('');
 };
+
+var threeWords = data => {
+  var count = 0;
+
+  data = data.split(' ');
+
+  for (i = 0; i < data.length; i++) {
+    if (data[i].match(/[a-zA-Z]/i)) {
+      if (count === 3) {
+        count = 3;
+      } else {
+        count++;
+      }
+    } else {
+      if (count === 3) {
+        count = 3;
+      } else {
+        count = 0;
+      }
+    }
+  }
+  if (count >= 3) {
+    return true;
+  } else {
+    return false;
+  }
+};
