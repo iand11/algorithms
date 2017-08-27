@@ -67,3 +67,18 @@ var threeWords = data => {
     return false;
   }
 };
+
+var commonWords = (a, b) => {
+  let common = [];
+  a = a.split(',').concat(b.split(','));
+
+  for (let i = 0; i < a.length; i++) {
+    if (a.indexOf(a[i]) !== a.lastIndexOf(a[i])) {
+      if (!common.includes(a[i])) {
+        common.push(a[i]);
+      }
+    }
+  }
+  common.sort();
+  return common.join(',');
+};
