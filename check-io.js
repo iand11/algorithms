@@ -82,3 +82,26 @@ var commonWords = (a, b) => {
   common.sort();
   return common.join(',');
 };
+
+function nonUniqueElements(data) {
+  let noDup = [];
+  for (let i = 0; i < data.length; i++) {
+    if (data.indexOf(data[i]) !== data.lastIndexOf(data[i])) {
+      noDup.push(data[i]);
+    }
+  }
+  return noDup;
+}
+
+function median(data) {
+  data.sort(function(a, b) {
+    return a - b;
+  });
+  if (data.length % 2 === 1) {
+    return data[(data.length - 1) / 2];
+  }
+  if (data.length % 2 === 0) {
+    let evenMiddle = data.length / 2;
+    return (data[evenMiddle] + data[evenMiddle - 1]) / 2;
+  }
+}
