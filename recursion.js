@@ -31,3 +31,17 @@ var factorialRecursion = num => {
 };
 
 factorialRecursion(4);
+
+var reverse = arr => {
+  reversedArray = [];
+
+  var addItems = orderedArr => {
+    if (orderedArr.length > 0) {
+      reversedArray.push(orderedArr.pop());
+      addItems(orderedArr);
+    }
+    return;
+  };
+  addItems(arr);
+  return reversedArray;
+};
